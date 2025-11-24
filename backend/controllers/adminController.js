@@ -3,7 +3,21 @@ const Project = require('../models/Project');
 const bcrypt = require('bcryptjs');
 
 exports.createAgent = async (req, res) => {
-    const { name, email, password } = req.body;
+    const {
+        name,
+        email,
+        password,
+        role,
+        capacity,
+        personalMobile,
+        alternateMobile,
+        officialMobile,
+        socialMediaIds,
+        address,
+        remarks,
+        status,
+        restrictedDataPrivilege
+    } = req.body;
 
     try {
         let user = await User.findOne({ email });
@@ -18,7 +32,16 @@ exports.createAgent = async (req, res) => {
             name,
             email,
             password: hashedPassword,
-            role: 'AGENT'
+            role: role || 'AGENT',
+            capacity: capacity || 3,
+            personalMobile,
+            alternateMobile,
+            officialMobile,
+            socialMediaIds: socialMediaIds || {},
+            address,
+            remarks,
+            status: status || 'Active',
+            restrictedDataPrivilege: restrictedDataPrivilege || false
         });
 
         await user.save();
