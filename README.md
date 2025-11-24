@@ -1,9 +1,3 @@
-# Enhanced Call Center Management System
-
-A comprehensive full-stack call center management system with advanced features for team management, call tracking, assignment management, and performance monitoring.
-
-## 🚀 Features
-
 ### Core Functionality
 - ✅ **Team Management**: Create and manage teams with team leads
 - ✅ **Agent Management**: User management with role-based access control
