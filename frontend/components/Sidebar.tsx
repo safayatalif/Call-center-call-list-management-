@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const Sidebar = () => {
     const pathname = usePathname();
-    const { logout, user } = useAuth();
+const { logout, user } = useAuth();
     const [isCollapsed, setIsCollapsed] = useState(false);
 
     const isActive = (path: string) => pathname.startsWith(path);
@@ -102,12 +102,12 @@ const Sidebar = () => {
                         <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                             Call Center
                         </h1>
-                        {user && (
+                        {/* {user && (
                             <div className="mt-1">
                                 <div className="text-sm font-medium text-white truncate">{user.name}</div>
                                 <div className="text-xs text-slate-400 capitalize">{user.role}</div>
                             </div>
-                        )}
+                        )} */}
                     </div>
                 )}
                 <button
